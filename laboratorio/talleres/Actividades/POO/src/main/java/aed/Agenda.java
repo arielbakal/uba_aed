@@ -1,31 +1,39 @@
 package aed;
 
+import java.util.ArrayList;
 import java.util.Vector;
 
 public class Agenda {
+    private Fecha fechaActual;
+    private ArrayList<Recordatorio> recordatorios;
 
     public Agenda(Fecha fechaActual) {
-        throw new UnsupportedOperationException("No implementada aun");
+        this.fechaActual = fechaActual;
+        this.recordatorios = new ArrayList<Recordatorio>();
     }
 
     public void agregarRecordatorio(Recordatorio recordatorio) {
-        throw new UnsupportedOperationException("No implementada aun");
-
+        recordatorios.add(recordatorio);
     }
 
     @Override
     public String toString() {
-        throw new UnsupportedOperationException("No implementada aun");
-
+        StringBuilder sb = new StringBuilder();
+        sb.append("Recordatorios para la fecha ").append(fechaActual).append(":\n");
+        for (Recordatorio recordatorio : recordatorios) {
+            if (recordatorio.getFecha().equals(fechaActual)) {
+                sb.append(" - ").append(recordatorio.getMensaje()).append("\n");
+            }
+        }
+        return sb.toString();
     }
 
     public void incrementarDia() {
-        throw new UnsupportedOperationException("No implementada aun");
-
+        fechaActual.incrementarDia();
     }
 
     public Fecha fechaActual() {
-        throw new UnsupportedOperationException("No implementada aun");
+        return fechaActual;
     }
 
 }
