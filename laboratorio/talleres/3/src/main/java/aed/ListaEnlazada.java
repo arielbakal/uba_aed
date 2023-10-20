@@ -66,24 +66,19 @@ public class ListaEnlazada<T> implements Secuencia<T> {
     }
 
     public void eliminar(int i) {
-        Nodo temp = actual;
+        Nodo actual_temp = actual;
+        Nodo anterior_temp = null; 
         // Itero hasta el i-esimo nodo
         for (int j = 0; j < i; j++) {
-            temp = temp.sig;
+            anterior_temp = actual_temp;
+            actual_temp = actual_temp.sig;
         }
-        // Si tengo anterior => asigno al siguiente del anterior de temp el siguiente de temp.
-        // Basicamente conecto el Nodo anterior (temp.ant) con el Nodo siguiente (temp.sig), 
-        // descartando el Nodo intermedio (temp). 
-        // temp.ant <-> temp.sig
-        if (temp.ant != null) {
-            temp.ant.sig = temp.sig;
-        } else { 
-            // Si no tengo anterior => quiero eliminar el primero
-            actual = temp.sig;
-        }
-        // Si no tengo siguiente => quiero eliminar el ultimo
-        if (temp.sig != null) {
-            temp.sig.ant = temp.ant;
+        if (i==0) { 
+            // Descarto el Head
+            actual = actual_temp.sig;
+        } else {
+            // temp.ant <-> temp.sig . Conecto los nodos dejando a temp sin conexion, por ende no forma parte de la secuencia. 
+            anterior_temp.sig = actual_temp.sig;
         }
         size--;
     }
@@ -110,41 +105,72 @@ public class ListaEnlazada<T> implements Secuencia<T> {
     }
 
     public ListaEnlazada<T> copiar() {
-        throw new UnsupportedOperationException("No implementada aun");
+        ListaEnlazada<T> copia = new ListaEnlazada<>(null);
+        Nodo temp = actual;
+        while (temp != null) {
+            T v = temp.valor;
+            copia.agregarAtras(v);
+            temp = temp.sig;
+        }
+        return copia;
     }
 
     public ListaEnlazada(ListaEnlazada<T> lista) {
-        throw new UnsupportedOperationException("No implementada aun");
+        if (lista != null) {
+            ListaEnlazada<T> templista = lista.copiar();
+            this.actual = templista.actual;
+            this.size = templista.size;
+        } else {
+            this.actual = null;
+            this.size = 0;
+        }
     }
     
     @Override
     public String toString() {
-        throw new UnsupportedOperationException("No implementada aun");
+        Nodo temp = actual;
+        StringBuffer buffer = new StringBuffer();
+        buffer.append("[");
+        while (temp.sig != null) {
+            buffer.append(temp.valor);
+            buffer.append(", ");
+            temp = temp.sig;
+        }
+        buffer.append(temp.valor);
+        buffer.append("]");
+        return buffer.toString();
     }
 
     private class ListaIterador implements Iterador<T> {
-    	// Completar atributos privados
+    	int indice;
+
+        ListaIterador(){
+            indice = 0;
+        }
 
         public boolean haySiguiente() {
-	        throw new UnsupportedOperationException("No implementada aun");
+	        return indice != size;
         }
         
         public boolean hayAnterior() {
-	        throw new UnsupportedOperationException("No implementada aun");
+	        return indice != 0;
         }
 
         public T siguiente() {
-	        throw new UnsupportedOperationException("No implementada aun");
+            int i = indice;
+            indice++;
+	        return obtener(i);
         }
         
 
         public T anterior() {
-	        throw new UnsupportedOperationException("No implementada aun");
+	        indice--;
+            return obtener(indice);
         }
     }
 
     public Iterador<T> iterador() {
-	    throw new UnsupportedOperationException("No implementada aun");
+	    return new ListaIterador();
     }
 
 }
