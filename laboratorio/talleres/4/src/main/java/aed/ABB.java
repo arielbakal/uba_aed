@@ -5,20 +5,31 @@ import java.util.*;
 // Todos los tipos de datos "Comparables" tienen el método compareTo()
 // elem1.compareTo(elem2) devuelve un entero. Si es mayor a 0, entonces elem1 > elem2
 public class ABB<T extends Comparable<T>> implements Conjunto<T> {
-    // Agregar atributos privados del Conjunto
+    
+    private Nodo _raiz;
+    private int _cardinal;
 
     private class Nodo {
-        // Agregar atributos privados del Nodo
-
-        // Crear Constructor del nodo
+        T valor;
+        Nodo izq;
+        Nodo der;
+        Nodo padre;
+        
+        Nodo(T v){
+            valor = v;
+            izq = null;
+            der = null;
+            padre = null;
+        }
     }
 
     public ABB() {
-        throw new UnsupportedOperationException("No implementada aun");
+        _raiz = null;
+        _cardinal = 0;
     }
 
     public int cardinal() {
-        throw new UnsupportedOperationException("No implementada aun");
+        return _cardinal;
     }
 
     public T minimo(){
@@ -29,12 +40,37 @@ public class ABB<T extends Comparable<T>> implements Conjunto<T> {
         throw new UnsupportedOperationException("No implementada aun");
     }
 
-    public void insertar(T elem){
-        throw new UnsupportedOperationException("No implementada aun");
+    public void insertar(T elem) {
+        if (!pertenece(elem)) {
+            _raiz = insertarRec(_raiz, elem);
+            _cardinal++;
+        }
+    }
+    
+    private Nodo insertarRec(Nodo nodo, T elem) {
+        if (nodo == null) {
+            return new Nodo(elem);
+        }
+        if (elem.compareTo(nodo.valor) < 0) {
+            nodo.izq = insertarRec(nodo.izq, elem);
+        } else if (elem.compareTo(nodo.valor) > 0) {
+            nodo.der = insertarRec(nodo.der, elem);
+        }
+        return nodo;
     }
 
     public boolean pertenece(T elem){
-        throw new UnsupportedOperationException("No implementada aun");
+        Nodo actual = _raiz;
+        while (actual != null) {
+            if (elem.compareTo(actual.valor) == 0) {
+                return true;
+            } else if (elem.compareTo(actual.valor) < 0) {
+                actual = actual.izq;
+            } else {
+                actual = actual.der;
+            }
+        }
+        return false;
     }
 
     public void eliminar(T elem){
