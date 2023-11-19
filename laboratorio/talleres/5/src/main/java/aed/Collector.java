@@ -4,7 +4,7 @@ public class Collector {
     private static Collector instance = null;
     private int acum = 0;
 
-    Collector() {
+    private Collector() {
     }
 
     public void inc() {

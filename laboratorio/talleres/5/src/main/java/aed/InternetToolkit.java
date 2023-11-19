@@ -20,7 +20,7 @@ public class InternetToolkit {
                 fragments[j + 1] = fragments[j]; // O(1)
                 j--; // O(1)
             }
-            
+
             fragments[j + 1] = key; // O(1)
         }
 
@@ -33,8 +33,22 @@ public class InternetToolkit {
     }
 
     public Router[] kTopRouters(Router[] routers, int k, int umbral) { // O( n + k*log n )
-        // IMPLEMENTAR
-        return null;
+       
+        // Convierto routers en un MaxHeap usando Array2Heap O(n)
+        MaxHeap heap = new MaxHeap(routers); // O(n)
+        Router[] routers_temp = new Router[k]; // O(1)
+
+        // Desencolar k veces y asignar a routers_temp hasta que no supere umbral O(k*log n)
+        for(int i = 0; i < k; i++){ // O(k)
+            Router temp = heap.desencolarRaiz(); // O(log n)
+            if (temp.getTrafico() > umbral){
+                routers_temp[i] = temp;
+            }
+        }
+
+        // O(n + k*log n)
+
+        return routers_temp;
     }
 
     public IPv4Address[] sortIPv4(String[] ipv4) { // puede ser O(n^2), Posible radix sort
