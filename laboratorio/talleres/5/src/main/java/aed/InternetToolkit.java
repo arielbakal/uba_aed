@@ -51,9 +51,43 @@ public class InternetToolkit {
         return routers_temp;
     }
 
-    public IPv4Address[] sortIPv4(String[] ipv4) { // puede ser O(n^2), Posible radix sort
-        // IMPLEMENTAR
-        return null;
+    public IPv4Address[] sortIPv4(String[] ipv4) { // O(n^2)
+
+        IPv4Address[] ipv4_res = new IPv4Address[ipv4.length]; // O(1)
+
+        // Radix sort, ordeno 4 veces para cada octeto empezando con el de menor prioridad
+        for(int k = 3; k >= 0; k--){ // O(4)
+
+            // Ordeno usando Insertion Sort O(n*n)
+            for (int i = 1; i < ipv4.length; i++) { // itera todos las posiciones i O(n)
+                String key = ipv4[i]; // O(1)
+                int j = i - 1; // O(1)
+
+                // Mover los elementos mayores que key a una posición adelante
+                while (j >= 0 && getOcteto(ipv4[j], k) > getOcteto(key, k)) { // true si j (inicialmente i-1) es mayor a i. Θ(n)
+                    ipv4[j + 1] = ipv4[j]; // O(1)
+                    j--; // O(1)
+                }
+
+                ipv4[j + 1] = key; // O(1)
+            }
+        }
+
+        // Transformo los strings a IPv4Adresses
+        for (int i = 0; i < ipv4.length; i++){ // O(n)
+            IPv4Address temp = new IPv4Address(ipv4[i]);
+            ipv4_res[i] = temp;
+        }
+
+        // Complejidad O(1 + 4*O(n*n) + O(n)) = O(n*(n+1)) = O(n*n)
+
+        return ipv4_res;
+    }
+
+    private int getOcteto(String ipv4, int k){
+        IPv4Address temp = new IPv4Address(ipv4);
+        int octeto = temp.getOctet(k);
+        return octeto;
     }
 
 }
