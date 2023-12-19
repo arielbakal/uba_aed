@@ -37,6 +37,20 @@
 
 ### Prácticas
 
+#### Guías de Ejercicios
+| Nro | Guía |
+| -- | --|
+| 1 | [Lógica](https://github.com/arielbakal/uba_aed/blob/main/practicas/guias/Practica%201%20-%20Logica.pdf) |
+| 2 | [Especificación](https://github.com/arielbakal/uba_aed/blob/main/practicas/guias/Practica%202%20-%20Especificaci%C3%B3n.pdf) |
+| 3 | [Verificación de Programas](https://github.com/arielbakal/uba_aed/blob/main/practicas/guias/Practica%203%20-%20Verificaci%C3%B3n%20de%20programas.pdf) |
+| 4 | [Especificación de TADs](https://github.com/arielbakal/uba_aed/blob/main/practicas/guias/Practica%204%20-%20Especificaci%C3%B3n%20de%20TADs.pdf) |
+| 5 | [Diseño](https://github.com/arielbakal/uba_aed/blob/main/practicas/guias/Practica%205%20-%20Dise%C3%B1o.pdf) |
+| 6 | [Complejidad](https://github.com/arielbakal/uba_aed/blob/main/practicas/guias/Practica%206%20-%20Complejidad.pdf) |
+| 7 | [Elección de Estructuras](https://github.com/arielbakal/uba_aed/blob/main/practicas/guias/Practica%207%20-%20Elecci%C3%B3n%20de%20Estructuras.pdf) |
+| 8 | [Sorting](https://github.com/arielbakal/uba_aed/blob/main/practicas/guias/Practica%208%20-%20Sorting.pdf) |
+
+
+
 ### Teóricas
 
 #### Clases Teóricas
