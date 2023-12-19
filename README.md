@@ -50,6 +50,21 @@
 | 7 | [Elección de Estructuras](https://github.com/arielbakal/uba_aed/blob/main/practicas/guias/Practica%207%20-%20Elecci%C3%B3n%20de%20Estructuras.pdf) |
 | 8 | [Sorting](https://github.com/arielbakal/uba_aed/blob/main/practicas/guias/Practica%208%20-%20Sorting.pdf) |
 
+#### Clases Prácticas
+| Nro | Clase |
+| - | - |
+| 1 | [Lógica](https://github.com/arielbakal/uba_aed/blob/main/practicas/clases/1%20-%20L%C3%B3gica.pdf) |
+| 2 | [Especificación](https://github.com/arielbakal/uba_aed/blob/main/practicas/clases/2%20-%20Especificaci%C3%B3n.pdf) |
+| 3 | [Weakest Precondition](https://github.com/arielbakal/uba_aed/blob/main/practicas/clases/3%20-%20WP.pdf) |
+| 4 | [WP en Ciclos](https://github.com/arielbakal/uba_aed/blob/main/practicas/clases/4%20-%20WP%20Ciclos.pdf) |
+| 5 | [Demostración de Programas Completos](https://github.com/arielbakal/uba_aed/blob/main/practicas/clases/5%20-%20Demostraci%C3%B3n%20de%20Programas%20Completos.pdf) |
+| 6 | [TADs](https://github.com/arielbakal/uba_aed/blob/main/practicas/clases/6%20-%20TADs.pdf) |
+| 7 | [InvRep y Abs](https://github.com/arielbakal/uba_aed/blob/main/practicas/clases/7%20-%20Rep%20y%20Abs.pdf) |
+| 8 | [Complejidad](https://github.com/arielbakal/uba_aed/blob/main/practicas/clases/8%20-%20Complejidad.pdf) |
+| 9 | [Elección de Estructuras Parte 1](https://github.com/arielbakal/uba_aed/blob/main/practicas/clases/9%20-%20Elecci%C3%B3n%20de%20Estructuras%20Parte%201.pdf) |
+| 10 | [Elección de Estructuras Parte 2](https://github.com/arielbakal/uba_aed/blob/main/practicas/clases/10%20-%20Elecci%C3%B3n%20de%20Estructuras%20Parte%202.pdf) |
+| 11 | [Elección de Estructuras Parte 3](https://github.com/arielbakal/uba_aed/blob/main/practicas/clases/11%20-%20Elecci%C3%B3n%20de%20Estructuras%20Parte%203.pdf) |
+| 12 | [Sorting](https://github.com/arielbakal/uba_aed/blob/main/practicas/clases/12%20-%20Sorting.pdf) |
 
 
 ### Teóricas
