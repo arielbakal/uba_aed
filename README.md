@@ -1,10 +1,11 @@
 ## Algoritmos y Estructuras de Datos 2C2023 (ex Algo 2)
 
+
 ### Parciales
-| Parcial | Enunciado + Resolución |
-| - | - |
-| 1P | [Enunciado + Resolución](https://github.com/arielbakal/uba_aed/blob/main/parciales/1/enunciado%20%2B%20solucion.pdf) | 
-| 2P | [Enunciado + Resolución](https://github.com/arielbakal/uba_aed/blob/main/parciales/2/enunciado%20%2B%20solucion.pdf) | 
+| Parcial | Enunciado | Solución |
+| - | - | - |
+| 1P | [Enunciado](https://github.com/arielbakal/uba_aed/blob/main/parciales/1/enunciado.pdf) | [Solución](https://github.com/arielbakal/uba_aed/blob/main/parciales/1/solucion.pdf) |
+| 2P | [Enunciado](https://github.com/arielbakal/uba_aed/blob/main/parciales/2/enunciado.pdf) | [Solución](https://github.com/arielbakal/uba_aed/blob/main/parciales/2/solucion.pdf) |
 
 ### Laboratorio
 
